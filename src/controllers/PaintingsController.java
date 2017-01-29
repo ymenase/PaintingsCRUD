@@ -26,18 +26,18 @@ public class PaintingsController {
 	}
 
 	@RequestMapping(path = "addPaintingToGallery.do", params = "add", method = RequestMethod.GET)
-	public ModelAndView addPaintingTogallery(Painting painting) {
+	public ModelAndView addPaintingToGallery(Painting painting) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("paintings.jsp");
 		mv.addObject("paintings", galleryDAO.addPaintingToGallery(painting));
 		return mv;
 	}
 
-	@RequestMapping(path = "removePaintingFromgallery.do", params = "remove", method = RequestMethod.GET)
-	public ModelAndView removePaintingFromgallery(@RequestParam("remove") String rp) {
+	@RequestMapping(path = "removePaintingFromGallery.do", params = "remove", method = RequestMethod.GET)
+	public ModelAndView removePaintingFromGallery(@RequestParam("remove") String title) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("paintings.jsp");
-		mv.addObject("paintings", galleryDAO.removePaintingFromGallery(rp));
+		mv.addObject("paintings", galleryDAO.removePaintingFromGallery(title));
 		return mv;
 
 	}

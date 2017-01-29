@@ -25,7 +25,7 @@ public class GalleryDAOImpl implements GalleryDAO {
 		try (InputStream is = wac.getServletContext().getResourceAsStream(FILE_NAME);
 
 				BufferedReader buf = new BufferedReader(new InputStreamReader(is));) {
-			String line = buf.readLine();
+			String line=null;
 			while ((line = buf.readLine()) != null) {
 				String[] tokens = line.split(",");
 				String title = tokens[0];
