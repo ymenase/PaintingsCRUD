@@ -1,9 +1,13 @@
 package data;
 
 import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 
@@ -49,6 +53,7 @@ public class GalleryDAOImpl implements GalleryDAO {
 		for (Painting p : paintings) {
 			System.out.println(p);
 		}
+		writeToFile(paintings);
 		return paintings;
 	}
 
@@ -61,6 +66,7 @@ public class GalleryDAOImpl implements GalleryDAO {
 			}
 		}
 		paintings.remove(painting);
+		writeToFile(paintings);
 		return paintings;
 	}
 
@@ -93,6 +99,22 @@ public class GalleryDAOImpl implements GalleryDAO {
 		}
 		painting.setNote("");
 		return paintings;
+	}
+	
+	@Override
+	public void writeToFile(List<Painting> paintings) {
+
+		try {
+			String writtenFile = wac.getServletContext().getRealPath(FILE_NAME);
+			System.out.println(writtenFile);
+			PrintWriter writer = new PrintWriter(new FileWriter(writtenFile));
+			for (Painting p : paintings) {
+				writer.println(paintings.toString());
+			}
+			writer.close();
+		} catch (IOException e) {
+			System.err.println(e);
+		}
 	}
 
 	@Override

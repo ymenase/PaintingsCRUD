@@ -1,6 +1,7 @@
 package data;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface GalleryDAO {
 	public ArrayList<Painting> getPaintings();
@@ -16,6 +17,8 @@ public interface GalleryDAO {
 	ArrayList<Painting> getAllPaintings();
 
 	ArrayList<Painting> getPaintingsByArtist(String ga);
+
+	void writeToFile(List<Painting> paintings);
 	
 	
 }

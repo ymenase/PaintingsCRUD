@@ -2,6 +2,11 @@ package data;
 
 public class Painting {
 	
+	@Override
+	public String toString() {
+		return "Painting [title=" + title + ", artist=" + artist + ", price=" + price + ", note=" + note + ", image="
+				+ image + "]";
+	}
 	private String title;
 	private String artist;
 	private String price;

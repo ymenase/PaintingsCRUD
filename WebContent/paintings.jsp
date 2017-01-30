@@ -41,18 +41,23 @@
 					</div>
 					<div class="col-sm-4">
 	
-						<p class="title">${p.title}</p>
-
-						${p.artist}<br /> ${p.price}<br /> ${p.note} <br /> 
+<ul>
+<li>Artist: ${p.artist}</li>
+<li>Price: ${p.price}</li>
+<li>Note: ${p.note}</li>
+</ul>
 </div>
 					<div class="col-sm-4">
-				<form action="removePaintingFromGallery.do">
-					<button class="button" name="remove" value="${p.title}">Delete
+				<form style="float:left" action="removePaintingFromGallery.do">
+					<button name="remove" value="${p.title}">Delete
 						Painting</button>
 				</form>
+				<form action="edit.do">
+				<button name="edit" value="${p.title}">Edit</button>
+				</form>
 <form action="updatePaintingNotes.do">
-						Current Note: ${a.note} <br /> <input type="text" name="note"
-							value="" /> <input type="hidden" name="name" value="${a.name}" />
+						Current Note: ${p.note} <br /> <input type="text" name="note"
+							value="" /> <input type="hidden" name="name" value="${p.title}" />
 						<button class="button" name="update" value="update">Update
 							${p.title} Notes</button>
 					</form>
