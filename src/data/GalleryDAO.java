@@ -19,6 +19,8 @@ public interface GalleryDAO {
 	ArrayList<Painting> getPaintingsByArtist(String ga);
 
 	void writeToFile(List<Painting> paintings);
+
+	Painting getPaintingToEdit(String title);
 	
 	
 }

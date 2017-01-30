@@ -41,6 +41,15 @@ public class PaintingsController {
 		return mv;
 
 	}
+	@RequestMapping(path = "editPainting.do", params = "edit", method = RequestMethod.GET)
+	public ModelAndView editPainting(@RequestParam("edit") String title) {
+		Painting p = galleryDAO.getPaintingToEdit(title);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("edit.jsp");
+		mv.addObject("painting", p);
+		return mv;
+		
+	}
 
 	@RequestMapping(path = "updatePaintingNotes.do", method = RequestMethod.GET)
 	public ModelAndView updatePaintingNotes(@RequestParam("note") String note, @RequestParam("name") String name) {

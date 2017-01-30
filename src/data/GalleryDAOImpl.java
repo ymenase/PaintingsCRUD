@@ -127,6 +127,17 @@ public class GalleryDAOImpl implements GalleryDAO {
 		}
 		return filteredPaintings;
 	}
+	@Override
+	public Painting getPaintingToEdit(String title) {
+		Painting paintingToEdit = null;
+		for (Painting p : paintings) { 
+			if (p.getTitle().equals(title)) {
+				paintingToEdit = p;
+				break;
+			}
+		}
+		return paintingToEdit;
+	}
 
 	@Override
 	public ArrayList<Painting> getPaintings() {

@@ -30,6 +30,7 @@
 </head>
 <body>
 
+
 		
 		
 		<h1>Available Painting Information</h1>
@@ -52,7 +53,7 @@
 					<button name="remove" value="${p.title}">Delete
 						Painting</button>
 				</form>
-				<form action="edit.do">
+				<form action="editPainting.do">
 				<button name="edit" value="${p.title}">Edit</button>
 				</form>
 <form action="updatePaintingNotes.do">
@@ -63,7 +64,7 @@
 					</form>
 
 					<form action="clearPaintingNotes.do">
-						<button class="button" name="clear" value="${a.name}">Clear
+						<button class="button" name="clear" value="${p.title}">Clear
 							${p.title} Notes</button>
 					</form>
 

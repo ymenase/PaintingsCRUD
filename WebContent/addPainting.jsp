@@ -29,17 +29,21 @@
 <title>Add a Painting</title>
 </head>
 <body>
-
+<div class="container-fluid">
 	<form action="addPaintingToGallery.do">
 		Title <input type="text" name="title" value="" /> 
 		Artist<input type="text"
 			name="artist" value="" /> 
+		Price<input type="text"
+			name="price" value="" /> 
+		Note<input type="text"
+			name="note" value="" /> 
 			Image
 			<input type="text" name="image" value="" />
 
 		<button class="button" name="add" value="add">Submit Painting</button>
 	</form>
-
+</div>
 	
 </body>
 </html>
